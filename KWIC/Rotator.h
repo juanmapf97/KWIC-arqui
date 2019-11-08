@@ -2,8 +2,7 @@
 //  Permuter.h
 //  KWIC
 //
-//  Created by Juanma on 5/11/19.
-//  Copyright © 2019 Juanma. All rights reserved.
+// Chilaquiles Pendientes
 //
 
 #ifndef Permuter_h
@@ -12,6 +11,9 @@
 #include <iostream>
 #include <vector>
 
+/*
+* Rotator. Generates all possible rotations from a vector of vector of sentence tokens.
+*/
 class Rotator {
     std::vector<std::vector<std::string>> rotated;
     
@@ -20,6 +22,10 @@ public:
     std::vector<std::vector<std::string>> getRotatedSentences();
 };
 
+/*
+ * Rotator. Generates the rotated list of tokens by moving a pivot through the word denoting which tokens shall move around.
+ * @params extracted. The vector of vector of extracted tokens to be rotated, may be of any size.
+ */
 Rotator::Rotator(std::vector<std::vector<std::string>> extracted) {
     for (int i = 0; i < extracted.size(); i++) {
         std::vector<std::string> temp(extracted[i].size());
@@ -45,6 +51,10 @@ Rotator::Rotator(std::vector<std::vector<std::string>> extracted) {
     }
 }
 
+/*
+ * Getter for the extracted attribute
+ * @return rotated. A vector with all possible rotations as a list of tokens
+ */
 std::vector<std::vector<std::string>> Rotator::getRotatedSentences() {
     return rotated;
 }

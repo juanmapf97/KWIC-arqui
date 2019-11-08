@@ -2,8 +2,7 @@
 //  Merger.h
 //  KWIC
 //
-//  Created by Juanma on 5/11/19.
-//  Copyright © 2019 Juanma. All rights reserved.
+// Chilaquiles Pendientes
 //
 
 #ifndef Merger_h
@@ -12,6 +11,9 @@
 #include <vector>
 #include <numeric>
 
+/*
+ * Merger. From a vector of vectors of tokens, generate the sentences as a single string.
+ */
 class Merger {
     std::vector<std::string> merged;
     
@@ -20,6 +22,11 @@ public:
     std::vector<std::string> getMergedSentences();
 };
 
+/*
+ * Merger. Generates a vector of strings from the list of tokens of each sentence by
+ * concatenating them with a space.
+ * @params shifted. The rotated vectors of tokens.
+ */
 Merger::Merger(std::vector<std::vector<std::string>> shifted) {
     for (int i = 0; i < shifted.size(); i++) {
         std::string merg = "";
@@ -31,6 +38,10 @@ Merger::Merger(std::vector<std::vector<std::string>> shifted) {
     }
 }
 
+/*
+ * Getter for the merged attribute.
+ * @return The vector of merged strings.
+ */
 std::vector<std::string> Merger::getMergedSentences() {
     return merged;
 }

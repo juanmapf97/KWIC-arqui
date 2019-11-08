@@ -2,8 +2,7 @@
 //  Sorter.h
 //  KWIC
 //
-//  Created by Juanma on 5/11/19.
-//  Copyright © 2019 Juanma. All rights reserved.
+// Chilaquiles Pendientes
 //
 
 #ifndef Sorter_h
@@ -13,7 +12,12 @@
 #include <string>
 #include <algorithm>
 
+/*
+ * Sorter. Receives a vector of strings and results in a sorted vector.
+ * The sorter is case insensitive.
+ */
 class Sorter {
+    // The resulting sorted vector of strings
     std::vector<std::string> sorted;
     
 public:
@@ -21,6 +25,10 @@ public:
     std::vector<std::string> getSorted();
 };
 
+/*
+ * Sorter. Creates a sorted vector of strings, case insensitive by comparing the string characters to lower.
+ * @params unsorted. An unsorted vector of strings.
+ */
 Sorter::Sorter(std::vector<std::string> unsorted) {
     std::sort(unsorted.begin(), unsorted.end(), [](const std::string& a, const std::string& b) -> bool {
         for (size_t c = 0; c < a.size() and c < b.size(); c++) {
@@ -32,6 +40,10 @@ Sorter::Sorter(std::vector<std::string> unsorted) {
     sorted = unsorted;
 }
 
+/*
+ * Getter of the sorted attribute.
+ * @return a sorted vector of strings
+ */
 std::vector<std::string> Sorter::getSorted() {
     return sorted;
 }
